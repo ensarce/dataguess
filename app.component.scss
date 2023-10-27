@@ -1,0 +1,23 @@
+/* CSS dosyanız (örneğin, country-list.component.css) */
+
+.country-card {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  width: calc(33.3333% - 20px); /* Kartların yatayda üç sıraya sığmasını sağlamak için */
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.country-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.country-card p {
+  margin: 5px 0;
+}

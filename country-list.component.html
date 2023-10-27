@@ -1,0 +1,19 @@
+<input type="text" [(ngModel)]="filterText" (input)="onFilterChange()">
+<select [(ngModel)]="groupBy">
+  <option value="">Gruplama Yok</option>
+  <option value="continent">Kıtaya Göre</option>
+  <option value="region">Bölgeye Göre</option>
+</select>
+
+<div *ngFor="let key of groupedCountryKeys">
+  <h2>{{ key }}</h2>
+  <div class="country-card" *ngFor="let country of groupedCountries[key]" (click)="selectCountry(country)" [ngClass]="{'selected': country.isSelected}">
+    <h3>{{ country.name }}</h3>
+    <p>ISO Kodu: {{ country.code }}</p>
+    <p>Başkent: {{ country.capital }}</p>
+    <p>Para Birimi: {{ country.currency }}</p>
+    <p>Dil(ler): {{ country.languageNames }}</p>
+  </div>
+</div>
+
+<button (click)="setAutomaticSelection()">Otomatik Seçim</button>
